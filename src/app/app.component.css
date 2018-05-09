@@ -1,0 +1,10 @@
+.countrylist-container {
+
+    height: calc(100vh - 12rem);
+}
+
+.countrylist-list {
+
+    max-height: calc(100vh - 12rem);
+    overflow-y: scroll;
+}
