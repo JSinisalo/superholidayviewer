@@ -1,0 +1,13 @@
+<div>
+    <ul class="list-group">
+      <li *ngFor="let p of pinList" class="list-group-item">
+        <div *ngIf="p.link !== '' && p.link !== 'undefined' && p.link != undefined">
+          <a href={{p.link}} target="_blank" style="margin-bottom: 1rem;">{{p.name}}</a>
+        </div>
+        <div *ngIf="p.link === '' || p.link == undefined || p.link === 'undefined'">
+          {{p.name}}
+        </div>
+      </li>
+    </ul>
+  </div>
+  

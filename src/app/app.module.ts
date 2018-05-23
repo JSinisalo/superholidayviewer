@@ -9,13 +9,16 @@ import { AppComponent } from './app.component';
 import { CountrylistComponent } from './countrylist/countrylist.component';
 import { HolidayviewerComponent } from './holidayviewer/holidayviewer.component';
 import { HolidayFetcherService } from './services/holidayfetcher.service';
+import { WikipediaFetcherService } from './services/wikipediafetcher.service';
+import { PinlistComponent } from './pinlist/pinlist.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     CountrylistComponent,
-    HolidayviewerComponent
+    HolidayviewerComponent,
+    PinlistComponent
   ],
   imports: [
     BrowserModule,
@@ -24,7 +27,10 @@ import { HolidayFetcherService } from './services/holidayfetcher.service';
     HttpClientModule,
     NgbModule.forRoot()
   ],
-  providers: [HolidayFetcherService],
+  providers: [
+    HolidayFetcherService,
+    WikipediaFetcherService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

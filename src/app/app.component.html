@@ -1,5 +1,5 @@
-<header class="navbar navbar-expand navbar-dark flex-column flex-md-row bd-navbar">
-  <p class="h1">SUPERHOLIDAYVIEWER</p>
+<header class="navbar navbar-expand navbar-dark flex-column flex-md-row bd-navbar" style="background: darkviolet; margin-bottom: 12px;">
+  <p class="h1" style="margin: auto; color: white;">SUPERHOLIDAYVIEWER</p>
 </header>
 <div class="container-fluid">
   <div class="row flex-xl-nowrap">
@@ -13,8 +13,18 @@
         <countrylist (onSelected)="onSelected($event)"></countrylist>
       </nav>
     </div>
-    <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5" role="main">
-      <holidayviewer [userInput]="userInput"></holidayviewer>
+    <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5"  style="padding-top: 0px !important;" role="main">
+      <holidayviewer [selectedPin]="selectedPin" [userInput]="userInput" (onPinned)="onPinned($event)" (onUnPinned)="onUnPinned($event)"></holidayviewer>
     </main>
+    <div class="col-xl-2">
+      <form #formElement="ngForm" class="d-flex align-items-center">
+        <div class="form-group">
+          <button (click)="clear()" class="btn btn-danger">Clear</button>
+        </div>
+      </form>
+      <nav class="countrylist-list">
+        <pinlist [pins]="pins" (onPinSelected)="onPinSelected($event)"></pinlist>
+      </nav>
+    </div>
   </div>
 </div>

@@ -1,4 +1,29 @@
-<button (click)="request()"><p class="h3">{{requestStr}}</p></button>
-<div>
-  <pre>{{result | json}}</pre>
-</div>
+<button (click)="request()" class="btn btn-primary" style="margin-bottom: 1rem;">SEARCH</button> <span class="flag-icon flag-icon-{{userInput.country.toLowerCase()}} flag-icon float-right" style="width: 2.5em; line-height: 2.5em;"></span>
+<nav class="countrylist-list" style="max-height: calc(100vh - 12rem);overflow-y: scroll;">
+  <ul class="list-group">
+    <li *ngFor="let v of views" class="list-group-item">
+      <div class="card">
+        <div class="row no-gutters">
+          <div *ngIf="v.image !== 'na'">
+            <div class="col-auto">
+              <a href={{v.link}} target="_blank"><img src={{v.image}} class="img-fluid img-thumbnail" alt=""></a>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card-block px-2">
+              <div *ngIf="getItem(v.date + v.name) == undefined || getItem(v.date + v.name) === 'unpinned'">
+                <h3 class="card-title" style="margin-top: 12px;">{{v.date}} - {{v.name}} <button (click)="pin(v.date, v.name, v.link)" class="btn btn-success float-right">PIN</button></h3>
+              </div>
+              <div *ngIf="getItem(v.date + v.name) != undefined && getItem(v.date + v.name) !== 'unpinned'">
+                  <h3 class="card-title" style="margin-top: 12px;">{{v.date}} - {{v.name}} <button (click)="unpin(v.date, v.name)" class="btn btn-danger float-right">UNPIN</button></h3>
+              </div>
+              <div *ngIf="v.image !== 'na'">
+                <p class="card-text">{{v.description}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </li>
+  </ul>
+</nav>

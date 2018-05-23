@@ -1,7 +1,7 @@
 <div>
   <ul class="list-group">
     <li *ngFor="let c of countries" class="list-group-item">
-      <span class="flag-icon {{c.flag}} flag-icon-squared"></span><button (click)="select(c.flag)"> {{c.name}}</button>
+      <span class="flag-icon {{c.flag}} flag-icon-squared"></span> <button (click)="select(c.flag)" style="margin-bottom: 1rem;">  {{c.name}}</button>
     </li>
   </ul>
 </div>

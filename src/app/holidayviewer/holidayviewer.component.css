@@ -1,10 +1,1 @@
-button {
-    background:none!important;
-    border:none; 
-    padding:0!important;
-    
-    /*optional*/
-    color:#069;
-    text-decoration:underline;
-    cursor:pointer;
-}
+@import "~flag-icon-css/css/flag-icon.min.css";
