@@ -12,7 +12,7 @@ export class HolidayFetcherService {
 
   fetch(c: string, y: string, f: Function, m?: string, d?: string) {
 
-    let url = 'https://holidayapi.com/v1/holidays?key=0df190fc-7317-44fa-abb5-900b9cd3cef8';
+    let url = 'https://holidayapi.com/v1/holidays?key=KEYHERE';
     let country = '&country=' + c;
     let year = '&year=' + y;
     let pretty = "&pretty=true";
